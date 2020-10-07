@@ -8,4 +8,4 @@ App, Card, ImagePopup, PopupWithForm, Main, Header, Footer.
 
 Необходимо реализовать работу попапов, лайков, удаление карточек, валидацию форм.
 
-Ссылка на проект:
+Ссылка на проект: https://kalinkinajane.github.io/mesto-react/.
