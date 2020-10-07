@@ -29,6 +29,9 @@ export class Api {
             return Promise.reject(`Ошибка: ${res.status}`)
         })
     }
+    getAllNeedData() {
+        return Promise.all([this.getItems(), this.getUserInfo()])
+    }
     patchUserInfo(data) {
         return fetch('https://mesto.nomoreparties.co/v1/cohort-15/users/me', {
             method: 'PATCH',

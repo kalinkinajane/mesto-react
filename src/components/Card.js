@@ -1,9 +1,9 @@
 import React from 'react';
 
 
-function Card({card, onCardClick}) {
+function Card({ card, onCardClick }) {
     function handleClick() {
-        onCardClick(card);   
+        onCardClick(card);
     }
 
     return (
@@ -14,7 +14,7 @@ function Card({card, onCardClick}) {
                 <h2 className="place__title">{card.name}</h2>
                 <div className="like">
                     <button className="place__like" type="button" aria-label="Нравится"></button>
-    <span className="place__like-count">{card.likes}</span>
+                    <span className="place__like-count">{card.likes}</span>
                 </div>
             </div>
         </div>

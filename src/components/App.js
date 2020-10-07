@@ -23,10 +23,9 @@ function App() {
   function handleAddPlaceClick() {
     setIsAddPlacePopupOpen(true);
   }
-function handleCardClick (card){
-  setSelectedCard(card)
-
-}
+  function handleCardClick(card) {
+    setSelectedCard(card)
+  }
 
   function closeAllPopups() {
     setIsEditAvatarPopupOpen(false);
@@ -34,11 +33,10 @@ function handleCardClick (card){
     setIsAddPlacePopupOpen(false);
     setSelectedCard(false);
   }
- 
   return (
     <div className="App">
       <Header />
-      <Main onEditProfile={handleEditProfileClick} onAddPlace={handleAddPlaceClick} onEditAvatar={handleEditAvatarClick} onCardClick={handleCardClick}/>
+      <Main onEditProfile={handleEditProfileClick} onAddPlace={handleAddPlaceClick} onEditAvatar={handleEditAvatarClick} onCardClick={handleCardClick} />
       <Footer />
       <PopupWithForm name="profile" title="Редактировать профиль" button="Сохранить" isOpen={isEditProfilePopupOpen ? "popup_open" : ""} onClose={closeAllPopups}>
         <label className="popup__label">
@@ -72,7 +70,7 @@ function handleCardClick (card){
         </label>
       </PopupWithForm>
       <PopupWithForm name="delete" title="Вы уверены?" button="Да"></PopupWithForm>
-      <ImagePopup card={selectedCard}  onClose={closeAllPopups} />
+      <ImagePopup card={selectedCard} onClose={closeAllPopups} />
     </div>
   );
 }
