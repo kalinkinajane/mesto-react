@@ -1,5 +1,5 @@
 import React from 'react';
-import api from '../utils/Api';
+import api from '../utils/api';
 import Card from './Card';
 
 function Main({ onEditAvatar, onEditProfile, onAddPlace, onCardClick }) {
@@ -20,7 +20,7 @@ function Main({ onEditAvatar, onEditProfile, onAddPlace, onCardClick }) {
             setUserName(userData.name);
             setUserDescription(userData.about);
             setUserAvatar(userData.avatar);
-        })
+        }).catch((err) => console.log(`Ошибка: ${err}`))
     }, [])
 
     return (

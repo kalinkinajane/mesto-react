@@ -1,5 +1,5 @@
 @import url(./__content/page__content.css);
-#root, body{
+.page{
     background-color: black;
     font-family: 'Inter', 'Original', 'Arial ', sans-serif;
     color: #ffffff;

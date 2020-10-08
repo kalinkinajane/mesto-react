@@ -1,4 +1,3 @@
-import { name } from "file-loader";
 import { Promise } from "core-js";
 
 export class Api {
@@ -89,20 +88,9 @@ export class Api {
             return Promise.reject(`Ошибка: ${res.status}`)
         });
     }
-    addLikes(id) {
+    toggleLikes(id, like){
         return fetch(`https://mesto.nomoreparties.co/v1/cohort-15/cards/likes/${id}`, {
-            method: "PUT",
-            headers: this._headers,
-        }).then((res) => {
-            if (res.ok) {
-                return res.json();
-            }
-            return Promise.reject(`Ошибка: ${res.status}`)
-        });
-    }
-    deleteLikes(id) {
-        return fetch(`https://mesto.nomoreparties.co/v1/cohort-15/cards/likes/${id}`, {
-            method: "DELETE",
+            method: like ? 'PUT' : 'DELETE',
             headers: this._headers,
         }).then((res) => {
             if (res.ok) {
