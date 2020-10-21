@@ -31,7 +31,7 @@ export class Api {
     getAllNeedData() {
         return Promise.all([this.getItems(), this.getUserInfo()])
     }
-    patchUserInfo(data) {
+    editUserInfo(data) {
         return fetch('https://mesto.nomoreparties.co/v1/cohort-15/users/me', {
             method: 'PATCH',
             headers: this._headers,
@@ -88,7 +88,7 @@ export class Api {
             return Promise.reject(`Ошибка: ${res.status}`)
         });
     }
-    toggleLikes(id, like){
+    toggleLikes(id, like) {
         return fetch(`https://mesto.nomoreparties.co/v1/cohort-15/cards/likes/${id}`, {
             method: like ? 'PUT' : 'DELETE',
             headers: this._headers,
