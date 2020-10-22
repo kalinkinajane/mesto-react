@@ -30,22 +30,25 @@ function App() {
   function handleAddPlaceSubmit(data) {
     api.addnewCard(data).then((newCard) => {
       setCards([newCard, ...cards])
+    }).then(() => {
+      closeAllPopups()
     }).catch((err) => console.log(`Ошибка: ${err}`))
-    closeAllPopups()
   }
   // Редактирование профиля
   function handleUpdateUser({ name, about }) {
     api.editUserInfo({ name, about }).then((newUserData) => {
       setCurrentUser(newUserData);
+    }).then(() => {
+      closeAllPopups()
     }).catch((err) => console.log(`Ошибка: ${err}`))
-    closeAllPopups()
   }
   // Редактирование аватара
   function handleUpdateAvatar({ avatar }) {
     api.editAvatar({ avatar }).then((newAvatar) => {
       setCurrentUser(newAvatar);
+    }).then(() => {
+      closeAllPopups()
     }).catch((err) => console.log(`Ошибка: ${err}`))
-    closeAllPopups()
   }
   // Лайк карточек
   function handleCardLike(card) {
